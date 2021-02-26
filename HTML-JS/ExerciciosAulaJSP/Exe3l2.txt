@@ -1,0 +1,36 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 3 - Atribua dois valores e a operação a ser realizada (+, -, * ou /). Utilize o comando switch.</title>
+</head>
+<body>
+<%
+    double n1 = 10;
+    double n2 = 25;
+    int op = 1;
+    
+    switch(op){
+        case 1:
+            out.println("Soma: " + (n1 + n1));
+            break;
+        
+        case 2:
+            out.println("Subtração: " + (n1 - n2));
+            break;
+        
+        case 3:
+            out.println("Multiplicação: " + (n1 * n2));
+            break;
+        
+        case 4:
+            out.println("Divisão: " + (n1 / n2));
+            break;
+        
+        default:
+            out.println("Valor inválido!");
+            break;
+    }
+%>
+</body>
+</html>

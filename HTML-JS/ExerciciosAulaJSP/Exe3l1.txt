@@ -1,0 +1,18 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 3 - Elabore um arquivo JSP chamado tabuada.jsp que exiba no HTML o resultado da tabuada de multiplicação dos números de 1 a 10.</title>
+</head>
+<body>
+<%
+for(int i = 1; i < 11; i++){
+    for(int y = 1; y < 11; y++){
+        out.println(i + "x" + y + "=" + i*y + "<br>");
+    }
+    out.println("<br>");
+}
+
+%>
+</body>
+</html>

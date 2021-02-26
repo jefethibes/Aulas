@@ -1,0 +1,28 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 7 - Calcule as soluções de uma equação do segundo grau do tipo ax2 + bx + c = 0. O programa deve atribuir os coeficientes a, b e c.
+-Se o delta for menor que zero, a equação não possui raízes reais.
+-Se o delta for igual a zero, a equação terá duas raízes idênticas.
+-Se o delta for maior que zero, a equação terá duas raízes distintas.</title>
+</head>
+<body>
+<%
+    double a = -12;
+    double b = -15;
+    double c = -20;
+    double delta = 0;
+    
+    delta = ((b*b)-4*a*c);
+    
+    if(delta < 0){
+        out.println("<h1>" + delta + ". Delta menor que zero, a equação não possui raízes reais.</h1>");
+    }else if(delta == 0){
+        out.println("<h1>" + delta + ". Delta igual a zero, a equação terá duas raízes idênticas.</h1>");
+    }else{
+        out.println("<h1>" + delta + ". Delta maior que zero, a equação terá duas raízes distintas.</h1>");
+    }
+%>
+</body>
+</html>

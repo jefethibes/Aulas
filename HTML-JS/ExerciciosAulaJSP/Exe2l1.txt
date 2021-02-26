@@ -1,0 +1,18 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 2 - Elabore um arquivo JSP chamado temperatura.jsp que imprima uma tabela HTML contendo a conversão de Celsius para Fahrenheit entre 10 e 60 graus Celsius. Acesse o link para mais informações do processo de conversão: https://www.pucsp.br/~jarakaki/ProgWeb/ex_tabelaCF.php.</title>
+</head>
+<body>
+<%
+double f = 42.8;
+double c = 0;
+
+c = ((f-32)/9)*5;
+
+out.println("Conversão em Celcius: " + c);
+
+%>
+</body>
+</html>

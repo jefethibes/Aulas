@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>Página de Edição</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/show">Show</a></li>
+                    <li><a href="/showContact">ShowContact</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li class="active"><a href="/editContact/">EditContact<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <% data.forEach(function(details) { %>
+        <form class="form-horizontal" role="form" style="width: 50%;" action="/editContact/<%= details._id %>" method="POST">
+            <div class="form-group">
+                <label for="nome" class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"
+                        value="<%= details.nome %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">E-mail</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="email"
+                        value="<%= details.email %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mensagem" class="col-sm-2 control-label">Mensagem</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="mensagem" name="mensagem" placeholder="mensagem"
+                        value="<%= details.mensagem %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <input id="submit" name="submit" type="submit" value="Salvar" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+        <% }) %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 2 - Some dois valores atribuídos e exiba o resultado.</title>
+</head>
+<body>
+<%
+    double n1 = 10;
+    double n2 = 25;
+    
+    out.println("A soma dos números é: " + (n1+n2));
+%>
+</body>
+</html>

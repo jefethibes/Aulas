@@ -1,0 +1,20 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 1 - Atribua um valor e imprima os resultados: “É maior que 10” ou “Não é maior que 10” ou ainda “É igual a 10”.</title>
+</head>
+<body>
+<%
+    int numero = 10;
+    
+    if(numero > 10){
+        out.println("<h1>Número é maior que 10!</h1>");
+    }else if(numero < 10){
+        out.println("<h1>Número é menor que 10!</h1>");
+    }else{
+        out.println("<h1>Número é igual a 10!</h1>");
+    }
+%>
+</body>
+</html>

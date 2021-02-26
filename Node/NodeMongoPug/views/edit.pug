@@ -1,0 +1,19 @@
+extends layout
+block content
+  form(action="/edit/"+article._id, method="post").form-group
+   label Data:
+   input.form-control(name="Data", type="date", required, value=article.Data)
+   label Temperatura Média °C:
+   input.form-control(name="Temperatura_Media_C", type="number", step="any", required, value=article.Temperatura_Media_C)
+   label Temperatura Minima °C:
+   input.form-control(name="Temperatura_Minima_C", type="number", step="any", required, value=article.Temperatura_Minima_C)
+   label Temperatura Maxima °C:
+   input.form-control(name="Temperatura_Maxima_C", type="number", step="any", required, value=article.Temperatura_Maxima_C)
+   label Precipitacao MM:
+   input.form-control(name="Precipitacao_mm", type="number", step="any", required, value=article.Precipitacao_mm)
+   label Final de Semana:
+   input.form-control(name="Final_de_Semana", type="number", step="any", required, value=article.Final_de_Semana)
+   label Consumo de Cerveja Litros:
+   input.form-control(name="Consumo_de_cerveja_litros", type="number", step="any", required, value=article.Consumo_de_cerveja_litros)
+   br
+   input.btn.btn-primary(type='submit', value='Submit')

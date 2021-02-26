@@ -1,0 +1,22 @@
+Pessoal, boa noite!
+
+Deve-se criar um novo projeto.
+Para isso, os arquivos fontes (server.js, edit.ejs, index.ejs, show.ejs etc.) deverão ser copiados para pasta do
+referido projeto.
+Posteriormente, deve-se instalar os seguintes módulos:
+
+npm init
+npm install express --save
+npm install ejs --save
+npm install nodemon --save-dev
+npm install body-parser --save 
+npm install mongodb --save
+
+Para executar o projeto, execute o comando:
+
+npm run dev
+
+Nesta nova versão, foram acrescentadas algumas páginas.
+Além disso, o layout foi reconstruído utilizando o Bootstrap.
+Por fim, foi incluída uma rota para redirecionamento para página de erro quando o
+usuário digita no URL qualquer caminho não configurado na aplicação.

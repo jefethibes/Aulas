@@ -1,0 +1,32 @@
+extends layout
+block content
+  br
+  h2 Importando arquivo CSV usando NodeJS e MongoDB
+  br
+  p
+   a(href='javascript:void(0)' class='btn btn-primary' id='importdata') Importar CSV 
+   |    
+   a(href='javascript:void(0)' class='btn btn-primary' id='fetchdata') Carregar Dados
+   |
+   a(href='/add' class='btn btn-primary' id='add') Cadastrar
+   |
+   a(href='/export' class='btn btn-primary' id='export') Exportar CSV
+  br  
+  p#message.alert.alert-success(style='display:none')
+  br
+  table.table.table-bordered
+    thead
+        tr
+            th #
+            th ID
+            th Data
+            th Temperatura Media °C
+            th Temperatura Minima °C
+            th Temperatura Maxima °C
+            th Precipitacao mm
+            th Final de Semana
+            th Consumo de cerveja litros
+            th Botões
+    tbody#trdata
+        tr
+            td(colspan='3') Clique no botão <strong>Importar CSV</strong> para importar e salvar os dados no MongoDB. <br />Clique no botão <strong>Carregar Dados</strong> para exibir os dados do banco de dados.

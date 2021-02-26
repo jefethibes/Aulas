@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>Formulário Jeferson Roberto</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="Formulario.js"></script>
+        <script src="jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.getJSON('estados_cidades.json', function (dados) {
+                    var itens = [];
+                    var opcoes = '<option value="">--Selecione--</option>';
+                    $.each(dados, function (chave, valor) {
+                        opcoes += '<option value="' + valor.nome + '">' + valor.nome + '</option>';
+                    });
+                    $("#optEstados").html(opcoes);
+                    $("#optEstados").change(function () {
+                        var opcoes_cidades = '';
+                        var texto = "";
+                        $("#optEstados option:selected").each(function () {
+                            texto += $(this).text();
+                        });
+                        $.each(dados, function (chave, valor) {
+                            if (valor.nome == texto) {
+                                $.each(valor.cidades, function (chave_cidade, valor_cidade) {
+                                    opcoes_cidades += '<option value="' + valor_cidade + '">' + valor_cidade + '</option>';
+                                });
+                            }
+                        });
+                        $("#optCidades").html(opcoes_cidades);
+                    }).change();
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="well well-lg text-center">
+                <h1>Exercício 4 - Formulário em JavaScript</h1>
+                <h3>Aluno: Jeferson Roberto</h3>
+                <h5>Turma: ADS 51 - Faculdade CESUSC</h5>
+            </div>
+            <div class="row">
+                <form class="col-md-12">
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">Nome:</label>
+							<input class="col-sm-11" type="text" id="nome">
+                        </div>
+                        <br>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">Nascim:</label>
+                            <input class="col-sm-5" type="date" id="nascimento" min="1910-01-01" max="2005-01-01" required>
+                            <span class="validity"></span>
+                            <label class="col-sm-1" for="formGroupInputSmall">CPF:</label>
+                            <input class="col-sm-5" type="text" id="cpf" onkeyup="mascara('###.###.###-##',this,event,true)" maxlength="14">
+                        </div>
+                        <br>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">RG:</label>
+                            <input class="col-sm-5" type="text" id="rg" onkeyup="mascara('#.###.###',this,event,true)" maxlength="9">
+                            <label class="col-sm-1" for="sexo">Sexo</label>
+                            <input type="radio" id="sexo" name="sexo" value="Masculino">Masculino
+                            <input type="radio" id="sexo" name="sexo" value="Feminino">Feminino
+                        </div>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">E-mail:</label>
+                            <input class="col-sm-5" type="email" id="email">
+                            <label class="col-sm-1" for="formGroupInputSmall">Cel:</label>
+                            <input class="col-sm-5" type="text" id="cel" onkeyup="mascara('(##)#####-####',this,event,true)" maxlength="14">
+                        </div>
+                        <br>
+                        <br>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">Escol:</label>
+                            <select class="col-sm-5" id="escolaridade">
+                                <option value="mediocom">Ensino médio completo</option>
+                                <option value="superiorinc">Ensino superior incompleto</option>
+                                <option value="superiorcom">Ensino superior completo</option>
+                            </select>
+                            <label class="col-sm-1" for="formGroupInputSmall">CEP:</label>
+                            <input class="col-sm-5" type="text" id="cep" onkeyup="mascara('##.###-##',this,event,true)" maxlength="9">
+                        </div>
+                        <br>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">Endereço:</label>
+                            <input class="col-sm-5" type="text" id="endereco">
+                            <label class="col-sm-1" for="formGroupInputSmall">Número:</label>
+                            <input class="col-sm-5" type="number" id="numero" min="0">
+                        </div>
+                        <br>
+                        <div class="form-group form-group">
+                            <label class="col-sm-1" for="formGroupInputSmall">Estado:</label>
+                            <select class="col-sm-5" id="optEstados">
+                                <option value="">--Selecione--</option>
+                            </select>
+                            <label class="col-sm-1" for="formGroupInputSmall">Cidade:</label>
+                            <select class="col-sm-5" id="optCidades">
+                            </select>
+                        </div>
+                        <br>
+                        <div class="form-group form-group" id="inte">
+                            <h4 class="col-sm-12">Cursos de interese:</h4>
+                            <input type="checkbox" name="inte">
+                            <label for="administracao">Administração</label>
+                            <input type="checkbox" name="inte">
+                            <label for="direito">Direito</label>
+                            <input type="checkbox" name="inte">
+                            <label for="piscicologia">Piscicologia</label>
+                            <input type="checkbox" name="inte">
+                            <label for="medicina">Medicina</label>
+                            <input type="checkbox" name="inte">
+                            <label for="sistemas">Sistemas de informação</label>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <div class="col-sm-12">
+                                <button type="reset" type="button" class="btn btn-default" onclick="limparCampos()"><span
+                                        class="glyphicon glyphicon-trash" aria-hidden="true"></span> Limpar</button>
+                                <button type="submit" type="button" class="btn btn-default" onclick="enviar()">Enviar</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+            <footer>
+                <div class="footer-copyright text-center py-3">© 2020 Copyright
+                    <a href="https://www.cesusc.edu.br/" target="_blank">Faculdade CESUSC</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

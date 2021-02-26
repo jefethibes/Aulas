@@ -1,0 +1,25 @@
+<%@page contentType="text/html" import="java.util.*, java.text.*" pageEncoding="ISO-8859-1"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Exercício 5 - Atribua as medidas dos três lados de um triângulo e classifique quanto à medida de seus lados.
+-Triângulo equilátero: possui os três lados com medidas iguais.
+-Triângulo isósceles: possui dois lados com medidas iguais.
+-Triângulo escaleno: possui os três lados com medidas diferentes.</title>
+</head>
+<body>
+<%
+    double l1 = 12;
+    double l2 = 13;
+    double l3 = 14;
+    
+    if(l1 == l2 && l2 == l3){
+        out.println("Triângulo equilátero: possui os três lados com medidas iguais.");
+    }else if(l1 == l2 || l1 == l3 || l2 == l3){
+        out.println("Triângulo isósceles: possui dois lados com medidas iguais.");
+    }else{
+        out.println("Triângulo escaleno: possui os três lados com medidas diferentes.");
+    }
+%>
+</body>
+</html>

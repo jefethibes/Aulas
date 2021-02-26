@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>Página de Contato</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/show">Show</a></li>
+                    <li><a href="/showContact">ShowContact</a></li>
+                    <li class="active"><a href="/contact">Contact<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <form class="form-horizontal" role="form" style="width: 50%;" value="/contact" method="POST">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Nome</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">E-mail</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="examplo@dominio.com"
+                        value="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message" class="col-sm-2 control-label">Mensagem</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" rows="4" id="message" name="message"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="human" name="human" placeholder="Resposta">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                    <input id="submit" name="submit" type="submit" value="Enviar" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
