@@ -6,7 +6,7 @@ var path = __dirname + "/views/";
 const ObjectId = require("mongodb").ObjectID;
 const MongoClient = require("mongodb").MongoClient;
 ///const uri = "mongodb://localhost:27017/admin";
-const uri = "mongodb+srv://jeferson:1234@cluster0-7uc8o.mongodb.net/test?retryWrites=true&w=majority"
+const uri = ""
 app.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(uri, (err, client) => {
